@@ -21,7 +21,23 @@ Array.prototype.bubbleSort = function () {
 
 // [5,4,3,2,1].bubbleSort();
 
-// subStrings
+// j being an offset.
+String.prototype.substrings = function () {
+  var result = [];
+  for(var i = 0; i < this.length; i++){
+    var substr = "";
+    for(var j = 0; i + j < this.length; j++){
+            substr += this[i+j];
+            result.push(substr);
+    }
+  }
+  console.log(result);
+  return result;
+};
+
+"cat".substrings();
+
+// subStrings || j being an index
 String.prototype.substrings = function () {
   var result = [];
   for(var i = 0; i < this.length; i++){
@@ -37,5 +53,3 @@ String.prototype.substrings = function () {
 };
 
 "cat".substrings();
-
-// j being an index vs. j being an offset.
