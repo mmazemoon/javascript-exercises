@@ -22,3 +22,20 @@ function exponentiation (base, power) {
 }
 
 // console.log(exponentiation(5, 3));
+
+function fibonacci(n) {
+  if (n <= 1){
+    return [0];
+  }
+  if (n === 2){
+    return [0, 1];
+  }
+  else{
+    var prevFibs = fibonacci(n-1);
+    var currentFib = prevFibs[prevFibs.length-1] + prevFibs[prevFibs.length-2];
+    prevFibs.push(currentFib);
+    return prevFibs;
+  }
+}
+
+console.log(fibonacci(5));
