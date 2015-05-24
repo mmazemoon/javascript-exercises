@@ -21,7 +21,7 @@ Array.prototype.bubbleSort = function () {
 
 // [5,4,3,2,1].bubbleSort();
 
-j being an offset.
+// substrings || j being an offset.
 String.prototype.substrings = function () {
   var result = [];
   for(var i = 0; i < this.length; i++){
@@ -65,5 +65,3 @@ String.prototype.substrings = function () {
   console.log(result);
   return result;
 };
-
-"cat".substrings();
