@@ -38,4 +38,31 @@ function fibonacci(n) {
   }
 }
 
-console.log(fibonacci(5));
+// console.log(fibonacci(5));
+
+function binarySearch(array, target){
+
+  if (array.length === 0 || (array.length === 1 && array[0] !== target)){
+    return -1;
+  }
+  var midpoint = Math.floor(array.length/2);
+
+  if (array[midpoint] === target){
+    return midpoint;
+  }
+  if (array[midpoint] > target){
+    return binarySearch(array.slice(0, midpoint), target);
+  }
+  if (array[midpoint] < target){
+    var result = binarySearch(array.slice(midpoint+1), target);
+    return (result === -1) ? -1 : result + midpoint + 1;
+  }
+}
+
+// console.log(binarySearch([1, 2, 3], 1)); // # => 0
+// console.log(binarySearch([2, 3, 4, 5], 3)); // # => 1
+// console.log(binarySearch([2, 4, 6, 8, 10], 6)); // # => 2
+// console.log(binarySearch([1, 3, 4, 5, 9], 5)); // # => 3
+// console.log(binarySearch([1, 2, 3, 4, 5, 6], 6)); // # => 5
+// console.log(binarySearch([1, 2, 3, 4, 5, 6], 0)); // # => nil
+// console.log(binarySearch([1, 2, 3, 4, 5, 7], 6)); // # => nil
